@@ -6,7 +6,7 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class RegionsRegionEndpoint, RegionsRegionJsonFallback, RegionsRegionLowerLatencyInformation, RegionsRegionsResponse, RegionsKotlinError, RegionsRegionsBuilder, RegionsKotlinEnumCompanion, RegionsKotlinEnum<E>, RegionsRegionsProtocol, RegionsKotlinArray<T>, RegionsRegionsUtils, RegionsRegionsResponseDynamicRole, RegionsRegionsResponseRegion, RegionsRegionsResponseCompanion, RegionsRegionsResponseDynamicRoleCompanion, RegionsRegionsResponseRegionServer, RegionsRegionsResponseRegionCompanion, RegionsRegionsResponseRegionServerService, RegionsRegionsResponseRegionServerCompanion, RegionsRegionsResponseRegionServerServiceCompanion, RegionsMessageVerificator, RegionsPingPerformerCompanion, RegionsKotlinPair<__covariant A, __covariant B>, RegionsRegionsCompanion, RegionsKotlinThrowable, RegionsKotlinx_serialization_coreSerializersModule, RegionsKotlinx_serialization_coreSerialKind, RegionsKotlinNothing;
+@class RegionsRegionEndpoint, RegionsRegionJsonFallback, RegionsRegionLowerLatencyInformation, RegionsShadowsocksRegionsResponse, RegionsKotlinError, RegionsVpnRegionsResponse, RegionsRegionsBuilder, RegionsKotlinEnumCompanion, RegionsKotlinEnum<E>, RegionsRegionsProtocol, RegionsKotlinArray<T>, RegionsRegionsUtils, RegionsShadowsocksRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetails, RegionsVpnRegionsResponseRegion, RegionsVpnRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetailsCompanion, RegionsVpnRegionsResponseRegionServerDetails, RegionsVpnRegionsResponseRegionCompanion, RegionsVpnRegionsResponseRegionServerDetailsCompanion, RegionsRegionsCompanion, RegionsKotlinThrowable, RegionsKotlinx_serialization_coreSerializersModule, RegionsKotlinx_serialization_coreSerialKind, RegionsKotlinNothing;
 
 @protocol RegionsRegionsAPI, RegionsIRegionEndpointProvider, RegionsPlatformInstancesProvider, RegionsKotlinComparable, RegionsKotlinx_serialization_coreKSerializer, RegionsKotlinCoroutineContext, RegionsKotlinx_coroutines_coreCoroutineScope, RegionsKotlinIterator, RegionsKotlinx_serialization_coreEncoder, RegionsKotlinx_serialization_coreSerialDescriptor, RegionsKotlinx_serialization_coreSerializationStrategy, RegionsKotlinx_serialization_coreDecoder, RegionsKotlinx_serialization_coreDeserializationStrategy, RegionsKotlinCoroutineContextElement, RegionsKotlinCoroutineContextKey, RegionsKotlinx_serialization_coreCompositeEncoder, RegionsKotlinAnnotation, RegionsKotlinx_serialization_coreCompositeDecoder, RegionsKotlinx_serialization_coreSerializersModuleCollector, RegionsKotlinKClass, RegionsKotlinKDeclarationContainer, RegionsKotlinKAnnotatedElement, RegionsKotlinKClassifier;
 
@@ -172,13 +172,14 @@ __attribute__((swift_name("RegionEndpoint")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegionJsonFallback")))
 @interface RegionsRegionJsonFallback : RegionsBase
-- (instancetype)initWithRegionsJson:(NSString *)regionsJson metadataJson:(NSString *)metadataJson __attribute__((swift_name("init(regionsJson:metadataJson:)"))) __attribute__((objc_designated_initializer));
-- (RegionsRegionJsonFallback *)doCopyRegionsJson:(NSString *)regionsJson metadataJson:(NSString *)metadataJson __attribute__((swift_name("doCopy(regionsJson:metadataJson:)")));
+- (instancetype)initWithVpnRegionsJson:(NSString *)vpnRegionsJson shadowsocksRegionsJson:(NSString *)shadowsocksRegionsJson metadataJson:(NSString *)metadataJson __attribute__((swift_name("init(vpnRegionsJson:shadowsocksRegionsJson:metadataJson:)"))) __attribute__((objc_designated_initializer));
+- (RegionsRegionJsonFallback *)doCopyVpnRegionsJson:(NSString *)vpnRegionsJson shadowsocksRegionsJson:(NSString *)shadowsocksRegionsJson metadataJson:(NSString *)metadataJson __attribute__((swift_name("doCopy(vpnRegionsJson:shadowsocksRegionsJson:metadataJson:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *metadataJson __attribute__((swift_name("metadataJson")));
-@property (readonly) NSString *regionsJson __attribute__((swift_name("regionsJson")));
+@property (readonly) NSString *shadowsocksRegionsJson __attribute__((swift_name("shadowsocksRegionsJson")));
+@property (readonly) NSString *vpnRegionsJson __attribute__((swift_name("vpnRegionsJson")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -197,8 +198,9 @@ __attribute__((swift_name("RegionLowerLatencyInformation")))
 __attribute__((swift_name("RegionsAPI")))
 @protocol RegionsRegionsAPI
 @required
-- (void)fetchRegionsLocale:(NSString *)locale callback:(void (^)(RegionsRegionsResponse * _Nullable, NSArray<RegionsKotlinError *> *))callback __attribute__((swift_name("fetchRegions(locale:callback:)")));
-- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, NSArray<RegionsKotlinError *> *))callback __attribute__((swift_name("pingRequests(callback:)")));
+- (void)fetchShadowsocksRegionsLocale:(NSString *)locale callback:(void (^)(NSArray<RegionsShadowsocksRegionsResponse *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchShadowsocksRegions(locale:callback:)")));
+- (void)fetchVpnRegionsLocale:(NSString *)locale callback:(void (^)(RegionsVpnRegionsResponse * _Nullable, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchVpnRegions(locale:callback:)")));
+- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("pingRequests(callback:)")));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -214,8 +216,9 @@ __attribute__((swift_name("RegionsBuilder")))
 - (RegionsRegionsBuilder *)setPersistencePreferenceNameName:(NSString * _Nullable)name __attribute__((swift_name("setPersistencePreferenceName(name:)")));
 - (RegionsRegionsBuilder *)setPlatformInstancesProviderProvider:(id<RegionsPlatformInstancesProvider>)provider __attribute__((swift_name("setPlatformInstancesProvider(provider:)")));
 - (RegionsRegionsBuilder *)setRegionJsonFallbackRegionJsonFallback:(RegionsRegionJsonFallback *)regionJsonFallback __attribute__((swift_name("setRegionJsonFallback(regionJsonFallback:)")));
-- (RegionsRegionsBuilder *)setRegionsListRequestPathRegionsListRequestPath:(NSString *)regionsListRequestPath __attribute__((swift_name("setRegionsListRequestPath(regionsListRequestPath:)")));
+- (RegionsRegionsBuilder *)setShadowsocksRegionsRequestPathShadowsocksRegionsRequestPath:(NSString *)shadowsocksRegionsRequestPath __attribute__((swift_name("setShadowsocksRegionsRequestPath(shadowsocksRegionsRequestPath:)")));
 - (RegionsRegionsBuilder *)setUserAgentUserAgent:(NSString *)userAgent __attribute__((swift_name("setUserAgent(userAgent:)")));
+- (RegionsRegionsBuilder *)setVpnRegionsRequestPathVpnRegionsRequestPath:(NSString *)vpnRegionsRequestPath __attribute__((swift_name("setVpnRegionsRequestPath(vpnRegionsRequestPath:)")));
 @end
 
 __attribute__((swift_name("KotlinComparable")))
@@ -258,8 +261,8 @@ __attribute__((swift_name("RegionsUtils")))
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)regionsUtils __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) RegionsRegionsUtils *shared __attribute__((swift_name("shared")));
-- (RegionsRegionsResponse *)parseRegionsResponseString:(NSString *)regionsResponseString __attribute__((swift_name("parse(regionsResponseString:)")));
-- (NSString *)stringifyRegionsResponse:(RegionsRegionsResponse *)regionsResponse __attribute__((swift_name("stringify(regionsResponse:)")));
+- (RegionsVpnRegionsResponse *)parseRegionsResponseString:(NSString *)regionsResponseString __attribute__((swift_name("parse(regionsResponseString:)")));
+- (NSString *)stringifyRegionsResponse:(RegionsVpnRegionsResponse *)regionsResponse __attribute__((swift_name("stringify(regionsResponse:)")));
 @end
 
 
@@ -268,26 +271,28 @@ __attribute__((swift_name("RegionsUtils")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse")))
-@interface RegionsRegionsResponse : RegionsBase
-- (instancetype)initWithDynamicRoles:(NSArray<RegionsRegionsResponseDynamicRole *> *)dynamicRoles pubdns:(NSArray<NSString *> *)pubdns regions:(NSArray<RegionsRegionsResponseRegion *> *)regions __attribute__((swift_name("init(dynamicRoles:pubdns:regions:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) RegionsRegionsResponseCompanion *companion __attribute__((swift_name("companion")));
-- (RegionsRegionsResponse *)doCopyDynamicRoles:(NSArray<RegionsRegionsResponseDynamicRole *> *)dynamicRoles pubdns:(NSArray<NSString *> *)pubdns regions:(NSArray<RegionsRegionsResponseRegion *> *)regions __attribute__((swift_name("doCopy(dynamicRoles:pubdns:regions:)")));
+__attribute__((swift_name("ShadowsocksRegionsResponse")))
+@interface RegionsShadowsocksRegionsResponse : RegionsBase
+- (instancetype)initWithRegion:(NSString *)region host:(NSString *)host port:(int32_t)port key:(NSString *)key cipher:(NSString *)cipher __attribute__((swift_name("init(region:host:port:key:cipher:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) RegionsShadowsocksRegionsResponseCompanion *companion __attribute__((swift_name("companion")));
+- (RegionsShadowsocksRegionsResponse *)doCopyRegion:(NSString *)region host:(NSString *)host port:(int32_t)port key:(NSString *)key cipher:(NSString *)cipher __attribute__((swift_name("doCopy(region:host:port:key:cipher:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSArray<RegionsRegionsResponseDynamicRole *> *dynamicRoles __attribute__((swift_name("dynamicRoles")));
-@property (readonly) NSArray<NSString *> *pubdns __attribute__((swift_name("pubdns")));
-@property (readonly) NSArray<RegionsRegionsResponseRegion *> *regions __attribute__((swift_name("regions")));
+@property (readonly) NSString *cipher __attribute__((swift_name("cipher")));
+@property (readonly) NSString *host __attribute__((swift_name("host")));
+@property (readonly) NSString *key __attribute__((swift_name("key")));
+@property (readonly) int32_t port __attribute__((swift_name("port")));
+@property (readonly) NSString *region __attribute__((swift_name("region")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.Companion")))
-@interface RegionsRegionsResponseCompanion : RegionsBase
+__attribute__((swift_name("ShadowsocksRegionsResponse.Companion")))
+@interface RegionsShadowsocksRegionsResponseCompanion : RegionsBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsResponseCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) RegionsShadowsocksRegionsResponseCompanion *shared __attribute__((swift_name("shared")));
 - (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -297,27 +302,53 @@ __attribute__((swift_name("RegionsResponse.Companion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.DynamicRole")))
-@interface RegionsRegionsResponseDynamicRole : RegionsBase
-- (instancetype)initWithId:(NSString *)id name:(NSString *)name resource:(NSString *)resource winIcon:(NSString *)winIcon __attribute__((swift_name("init(id:name:resource:winIcon:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) RegionsRegionsResponseDynamicRoleCompanion *companion __attribute__((swift_name("companion")));
-- (RegionsRegionsResponseDynamicRole *)doCopyId:(NSString *)id name:(NSString *)name resource:(NSString *)resource winIcon:(NSString *)winIcon __attribute__((swift_name("doCopy(id:name:resource:winIcon:)")));
+__attribute__((swift_name("VpnRegionsResponse")))
+@interface RegionsVpnRegionsResponse : RegionsBase
+- (instancetype)initWithGroups:(NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseProtocolDetails *> *> *)groups regions:(NSArray<RegionsVpnRegionsResponseRegion *> *)regions __attribute__((swift_name("init(groups:regions:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) RegionsVpnRegionsResponseCompanion *companion __attribute__((swift_name("companion")));
+- (RegionsVpnRegionsResponse *)doCopyGroups:(NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseProtocolDetails *> *> *)groups regions:(NSArray<RegionsVpnRegionsResponseRegion *> *)regions __attribute__((swift_name("doCopy(groups:regions:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) NSString *id __attribute__((swift_name("id")));
+@property (readonly) NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseProtocolDetails *> *> *groups __attribute__((swift_name("groups")));
+@property (readonly) NSArray<RegionsVpnRegionsResponseRegion *> *regions __attribute__((swift_name("regions")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("VpnRegionsResponse.Companion")))
+@interface RegionsVpnRegionsResponseCompanion : RegionsBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) RegionsVpnRegionsResponseCompanion *shared __attribute__((swift_name("shared")));
+- (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
+@end
+
+
+/**
+ * @note annotations
+ *   kotlinx.serialization.Serializable
+*/
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("VpnRegionsResponse.ProtocolDetails")))
+@interface RegionsVpnRegionsResponseProtocolDetails : RegionsBase
+- (instancetype)initWithName:(NSString *)name ports:(NSArray<RegionsInt *> *)ports __attribute__((swift_name("init(name:ports:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) RegionsVpnRegionsResponseProtocolDetailsCompanion *companion __attribute__((swift_name("companion")));
+- (RegionsVpnRegionsResponseProtocolDetails *)doCopyName:(NSString *)name ports:(NSArray<RegionsInt *> *)ports __attribute__((swift_name("doCopy(name:ports:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *name __attribute__((swift_name("name")));
-@property (readonly) NSString *resource __attribute__((swift_name("resource")));
-@property (readonly) NSString *winIcon __attribute__((swift_name("winIcon")));
+@property (readonly) NSArray<RegionsInt *> *ports __attribute__((swift_name("ports")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.DynamicRoleCompanion")))
-@interface RegionsRegionsResponseDynamicRoleCompanion : RegionsBase
+__attribute__((swift_name("VpnRegionsResponse.ProtocolDetailsCompanion")))
+@interface RegionsVpnRegionsResponseProtocolDetailsCompanion : RegionsBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsResponseDynamicRoleCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) RegionsVpnRegionsResponseProtocolDetailsCompanion *shared __attribute__((swift_name("shared")));
 - (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -327,16 +358,17 @@ __attribute__((swift_name("RegionsResponse.DynamicRoleCompanion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.Region")))
-@interface RegionsRegionsResponseRegion : RegionsBase
-- (instancetype)initWithId:(NSString *)id name:(NSString *)name country:(NSString *)country geo:(BOOL)geo offline:(BOOL)offline latitude:(NSString * _Nullable)latitude longitude:(NSString * _Nullable)longitude autoRegion:(BOOL)autoRegion portForward:(BOOL)portForward servers:(NSArray<RegionsRegionsResponseRegionServer *> *)servers __attribute__((swift_name("init(id:name:country:geo:offline:latitude:longitude:autoRegion:portForward:servers:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) RegionsRegionsResponseRegionCompanion *companion __attribute__((swift_name("companion")));
-- (RegionsRegionsResponseRegion *)doCopyId:(NSString *)id name:(NSString *)name country:(NSString *)country geo:(BOOL)geo offline:(BOOL)offline latitude:(NSString * _Nullable)latitude longitude:(NSString * _Nullable)longitude autoRegion:(BOOL)autoRegion portForward:(BOOL)portForward servers:(NSArray<RegionsRegionsResponseRegionServer *> *)servers __attribute__((swift_name("doCopy(id:name:country:geo:offline:latitude:longitude:autoRegion:portForward:servers:)")));
+__attribute__((swift_name("VpnRegionsResponse.Region")))
+@interface RegionsVpnRegionsResponseRegion : RegionsBase
+- (instancetype)initWithId:(NSString *)id name:(NSString *)name country:(NSString *)country dns:(NSString *)dns geo:(BOOL)geo offline:(BOOL)offline latitude:(NSString * _Nullable)latitude longitude:(NSString * _Nullable)longitude autoRegion:(BOOL)autoRegion portForward:(BOOL)portForward proxy:(NSArray<NSString *> *)proxy servers:(NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseRegionServerDetails *> *> *)servers __attribute__((swift_name("init(id:name:country:dns:geo:offline:latitude:longitude:autoRegion:portForward:proxy:servers:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) RegionsVpnRegionsResponseRegionCompanion *companion __attribute__((swift_name("companion")));
+- (RegionsVpnRegionsResponseRegion *)doCopyId:(NSString *)id name:(NSString *)name country:(NSString *)country dns:(NSString *)dns geo:(BOOL)geo offline:(BOOL)offline latitude:(NSString * _Nullable)latitude longitude:(NSString * _Nullable)longitude autoRegion:(BOOL)autoRegion portForward:(BOOL)portForward proxy:(NSArray<NSString *> *)proxy servers:(NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseRegionServerDetails *> *> *)servers __attribute__((swift_name("doCopy(id:name:country:dns:geo:offline:latitude:longitude:autoRegion:portForward:proxy:servers:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) BOOL autoRegion __attribute__((swift_name("autoRegion")));
 @property (readonly) NSString *country __attribute__((swift_name("country")));
+@property (readonly) NSString *dns __attribute__((swift_name("dns")));
 @property (readonly) BOOL geo __attribute__((swift_name("geo")));
 @property (readonly) NSString *id __attribute__((swift_name("id")));
 @property (readonly) NSString * _Nullable latitude __attribute__((swift_name("latitude")));
@@ -344,16 +376,17 @@ __attribute__((swift_name("RegionsResponse.Region")))
 @property (readonly) NSString *name __attribute__((swift_name("name")));
 @property (readonly) BOOL offline __attribute__((swift_name("offline")));
 @property (readonly) BOOL portForward __attribute__((swift_name("portForward")));
-@property (readonly) NSArray<RegionsRegionsResponseRegionServer *> *servers __attribute__((swift_name("servers")));
+@property (readonly) NSArray<NSString *> *proxy __attribute__((swift_name("proxy")));
+@property (readonly) NSDictionary<NSString *, NSArray<RegionsVpnRegionsResponseRegionServerDetails *> *> *servers __attribute__((swift_name("servers")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.RegionCompanion")))
-@interface RegionsRegionsResponseRegionCompanion : RegionsBase
+__attribute__((swift_name("VpnRegionsResponse.RegionCompanion")))
+@interface RegionsVpnRegionsResponseRegionCompanion : RegionsBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsResponseRegionCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) RegionsVpnRegionsResponseRegionCompanion *shared __attribute__((swift_name("shared")));
 - (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
@@ -363,85 +396,27 @@ __attribute__((swift_name("RegionsResponse.RegionCompanion")))
  *   kotlinx.serialization.Serializable
 */
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.RegionServer")))
-@interface RegionsRegionsResponseRegionServer : RegionsBase
-- (instancetype)initWithIp:(NSString *)ip cn:(NSString *)cn fqdn:(NSString * _Nullable)fqdn services:(NSArray<RegionsRegionsResponseRegionServerService *> *)services __attribute__((swift_name("init(ip:cn:fqdn:services:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) RegionsRegionsResponseRegionServerCompanion *companion __attribute__((swift_name("companion")));
-- (RegionsRegionsResponseRegionServer *)doCopyIp:(NSString *)ip cn:(NSString *)cn fqdn:(NSString * _Nullable)fqdn services:(NSArray<RegionsRegionsResponseRegionServerService *> *)services __attribute__((swift_name("doCopy(ip:cn:fqdn:services:)")));
+__attribute__((swift_name("VpnRegionsResponse.RegionServerDetails")))
+@interface RegionsVpnRegionsResponseRegionServerDetails : RegionsBase
+- (instancetype)initWithIp:(NSString *)ip cn:(NSString *)cn usesVanillaOVPN:(BOOL)usesVanillaOVPN __attribute__((swift_name("init(ip:cn:usesVanillaOVPN:)"))) __attribute__((objc_designated_initializer));
+@property (class, readonly, getter=companion) RegionsVpnRegionsResponseRegionServerDetailsCompanion *companion __attribute__((swift_name("companion")));
+- (RegionsVpnRegionsResponseRegionServerDetails *)doCopyIp:(NSString *)ip cn:(NSString *)cn usesVanillaOVPN:(BOOL)usesVanillaOVPN __attribute__((swift_name("doCopy(ip:cn:usesVanillaOVPN:)")));
 - (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
 - (NSUInteger)hash __attribute__((swift_name("hash()")));
 - (NSString *)description __attribute__((swift_name("description()")));
 @property (readonly) NSString *cn __attribute__((swift_name("cn")));
-@property (readonly) NSString * _Nullable fqdn __attribute__((swift_name("fqdn")));
 @property (readonly) NSString *ip __attribute__((swift_name("ip")));
-@property (readonly) NSArray<RegionsRegionsResponseRegionServerService *> *services __attribute__((swift_name("services")));
+@property (readonly) BOOL usesVanillaOVPN __attribute__((swift_name("usesVanillaOVPN")));
 @end
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.RegionServerCompanion")))
-@interface RegionsRegionsResponseRegionServerCompanion : RegionsBase
+__attribute__((swift_name("VpnRegionsResponse.RegionServerDetailsCompanion")))
+@interface RegionsVpnRegionsResponseRegionServerDetailsCompanion : RegionsBase
 + (instancetype)alloc __attribute__((unavailable));
 + (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
 + (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsResponseRegionServerCompanion *shared __attribute__((swift_name("shared")));
+@property (class, readonly, getter=shared) RegionsVpnRegionsResponseRegionServerDetailsCompanion *shared __attribute__((swift_name("shared")));
 - (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-
-/**
- * @note annotations
- *   kotlinx.serialization.Serializable
-*/
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.RegionServerService")))
-@interface RegionsRegionsResponseRegionServerService : RegionsBase
-- (instancetype)initWithService:(NSString *)service ports:(NSArray<RegionsInt *> *)ports ncp:(BOOL)ncp __attribute__((swift_name("init(service:ports:ncp:)"))) __attribute__((objc_designated_initializer));
-@property (class, readonly, getter=companion) RegionsRegionsResponseRegionServerServiceCompanion *companion __attribute__((swift_name("companion")));
-- (RegionsRegionsResponseRegionServerService *)doCopyService:(NSString *)service ports:(NSArray<RegionsInt *> *)ports ncp:(BOOL)ncp __attribute__((swift_name("doCopy(service:ports:ncp:)")));
-- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
-- (NSUInteger)hash __attribute__((swift_name("hash()")));
-- (NSString *)description __attribute__((swift_name("description()")));
-@property (readonly) BOOL ncp __attribute__((swift_name("ncp")));
-@property (readonly) NSArray<RegionsInt *> *ports __attribute__((swift_name("ports")));
-@property (readonly) NSString *service __attribute__((swift_name("service")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("RegionsResponse.RegionServerServiceCompanion")))
-@interface RegionsRegionsResponseRegionServerServiceCompanion : RegionsBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsResponseRegionServerServiceCompanion *shared __attribute__((swift_name("shared")));
-- (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("MessageVerificator")))
-@interface RegionsMessageVerificator : RegionsBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)messageVerificator __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsMessageVerificator *shared __attribute__((swift_name("shared")));
-- (BOOL)verifyMessageMessage:(NSString *)message key:(NSString *)key __attribute__((swift_name("verifyMessage(message:key:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PingPerformer")))
-@interface RegionsPingPerformer : RegionsBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-@property (class, readonly, getter=companion) RegionsPingPerformerCompanion *companion __attribute__((swift_name("companion")));
-- (void)pingEndpointsEndpoints:(NSDictionary<NSString *, NSArray<NSString *> *> *)endpoints callback:(void (^)(NSDictionary<NSString *, NSArray<RegionsKotlinPair<NSString *, RegionsLong *> *> *> *))callback __attribute__((swift_name("pingEndpoints(endpoints:callback:)")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("PingPerformer.Companion")))
-@interface RegionsPingPerformerCompanion : RegionsBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsPingPerformerCompanion *shared __attribute__((swift_name("shared")));
 @end
 
 __attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
@@ -454,8 +429,9 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Regions")))
 @interface RegionsRegions : RegionsBase <RegionsRegionsAPI, RegionsKotlinx_coroutines_coreCoroutineScope>
 @property (class, readonly, getter=companion) RegionsRegionsCompanion *companion __attribute__((swift_name("companion")));
-- (void)fetchRegionsLocale:(NSString *)locale callback:(void (^)(RegionsRegionsResponse * _Nullable, NSArray<RegionsKotlinError *> *))callback __attribute__((swift_name("fetchRegions(locale:callback:)")));
-- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, NSArray<RegionsKotlinError *> *))callback __attribute__((swift_name("pingRequests(callback:)")));
+- (void)fetchShadowsocksRegionsLocale:(NSString *)locale callback:(void (^)(NSArray<RegionsShadowsocksRegionsResponse *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchShadowsocksRegions(locale:callback:)")));
+- (void)fetchVpnRegionsLocale:(NSString *)locale callback:(void (^)(RegionsVpnRegionsResponse * _Nullable, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchVpnRegions(locale:callback:)")));
+- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("pingRequests(callback:)")));
 @property (readonly) id<RegionsKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
 @end
 
@@ -541,18 +517,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreDeserializationStrategy")))
 __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @protocol RegionsKotlinx_serialization_coreKSerializer <RegionsKotlinx_serialization_coreSerializationStrategy, RegionsKotlinx_serialization_coreDeserializationStrategy>
 @required
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinPair")))
-@interface RegionsKotlinPair<__covariant A, __covariant B> : RegionsBase
-- (instancetype)initWithFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("init(first:second:)"))) __attribute__((objc_designated_initializer));
-- (RegionsKotlinPair<A, B> *)doCopyFirst:(A _Nullable)first second:(B _Nullable)second __attribute__((swift_name("doCopy(first:second:)")));
-- (BOOL)equalsOther:(id _Nullable)other __attribute__((swift_name("equals(other:)")));
-- (int32_t)hashCode __attribute__((swift_name("hashCode()")));
-- (NSString *)toString __attribute__((swift_name("toString()")));
-@property (readonly) A _Nullable first __attribute__((swift_name("first")));
-@property (readonly) B _Nullable second __attribute__((swift_name("second")));
 @end
 
 

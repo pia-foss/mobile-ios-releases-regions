@@ -1,6 +1,0 @@
-framework module PIARegions {
-    umbrella header "PIARegions.h"
-
-    export *
-    module * { export * }
-}
