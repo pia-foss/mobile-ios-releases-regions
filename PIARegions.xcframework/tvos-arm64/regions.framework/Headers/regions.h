@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class RegionsRegionEndpoint, RegionsRegionJsonFallback, RegionsRegionLowerLatencyInformation, RegionsShadowsocksRegionsResponse, RegionsKotlinError, RegionsVpnRegionsResponse, RegionsRegionsBuilder, RegionsKotlinEnumCompanion, RegionsKotlinEnum<E>, RegionsRegionsProtocol, RegionsKotlinArray<T>, RegionsRegionsUtils, RegionsShadowsocksRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetails, RegionsVpnRegionsResponseRegion, RegionsVpnRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetailsCompanion, RegionsVpnRegionsResponseRegionServerDetails, RegionsVpnRegionsResponseRegionCompanion, RegionsVpnRegionsResponseRegionServerDetailsCompanion, RegionsRegionsCompanion, RegionsKotlinThrowable, RegionsKotlinx_serialization_coreSerializersModule, RegionsKotlinx_serialization_coreSerialKind, RegionsKotlinNothing;
+@class RegionsRegionEndpoint, RegionsRegionJsonFallback, RegionsRegionLowerLatencyInformation, RegionsShadowsocksRegionsResponse, RegionsKotlinError, RegionsVpnRegionsResponse, RegionsRegionsBuilder, RegionsKotlinEnumCompanion, RegionsKotlinEnum<E>, RegionsRegionsProtocol, RegionsKotlinArray<T>, RegionsRegionsUtils, RegionsRegionsCompanion, RegionsShadowsocksRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetails, RegionsVpnRegionsResponseRegion, RegionsVpnRegionsResponseCompanion, RegionsVpnRegionsResponseProtocolDetailsCompanion, RegionsVpnRegionsResponseRegionServerDetails, RegionsVpnRegionsResponseRegionCompanion, RegionsVpnRegionsResponseRegionServerDetailsCompanion, RegionsKotlinThrowable, RegionsKotlinx_serialization_coreSerializersModule, RegionsKotlinx_serialization_coreSerialKind, RegionsKotlinNothing;
 
-@protocol RegionsRegionsAPI, RegionsIRegionEndpointProvider, RegionsPlatformInstancesProvider, RegionsKotlinComparable, RegionsKotlinx_serialization_coreKSerializer, RegionsKotlinCoroutineContext, RegionsKotlinx_coroutines_coreCoroutineScope, RegionsKotlinIterator, RegionsKotlinx_serialization_coreEncoder, RegionsKotlinx_serialization_coreSerialDescriptor, RegionsKotlinx_serialization_coreSerializationStrategy, RegionsKotlinx_serialization_coreDecoder, RegionsKotlinx_serialization_coreDeserializationStrategy, RegionsKotlinCoroutineContextElement, RegionsKotlinCoroutineContextKey, RegionsKotlinx_serialization_coreCompositeEncoder, RegionsKotlinAnnotation, RegionsKotlinx_serialization_coreCompositeDecoder, RegionsKotlinx_serialization_coreSerializersModuleCollector, RegionsKotlinKClass, RegionsKotlinKDeclarationContainer, RegionsKotlinKAnnotatedElement, RegionsKotlinKClassifier;
+@protocol RegionsRegionsAPI, RegionsIRegionEndpointProvider, RegionsPlatformInstancesProvider, RegionsKotlinComparable, RegionsKotlinCoroutineContext, RegionsKotlinx_coroutines_coreCoroutineScope, RegionsKotlinx_serialization_coreKSerializer, RegionsKotlinIterator, RegionsKotlinCoroutineContextElement, RegionsKotlinCoroutineContextKey, RegionsKotlinx_serialization_coreEncoder, RegionsKotlinx_serialization_coreSerialDescriptor, RegionsKotlinx_serialization_coreSerializationStrategy, RegionsKotlinx_serialization_coreDecoder, RegionsKotlinx_serialization_coreDeserializationStrategy, RegionsKotlinx_serialization_coreCompositeEncoder, RegionsKotlinAnnotation, RegionsKotlinx_serialization_coreCompositeDecoder, RegionsKotlinx_serialization_coreSerializersModuleCollector, RegionsKotlinKClass, RegionsKotlinKDeclarationContainer, RegionsKotlinKAnnotatedElement, RegionsKotlinKClassifier;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -265,6 +265,31 @@ __attribute__((swift_name("RegionsUtils")))
 - (NSString *)stringifyRegionsResponse:(RegionsVpnRegionsResponse *)regionsResponse __attribute__((swift_name("stringify(regionsResponse:)")));
 @end
 
+__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
+@protocol RegionsKotlinx_coroutines_coreCoroutineScope
+@required
+@property (readonly) id<RegionsKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Regions")))
+@interface RegionsRegions : RegionsBase <RegionsRegionsAPI, RegionsKotlinx_coroutines_coreCoroutineScope>
+@property (class, readonly, getter=companion) RegionsRegionsCompanion *companion __attribute__((swift_name("companion")));
+- (void)fetchShadowsocksRegionsLocale:(NSString *)locale callback:(void (^)(NSArray<RegionsShadowsocksRegionsResponse *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchShadowsocksRegions(locale:callback:)")));
+- (void)fetchVpnRegionsLocale:(NSString *)locale callback:(void (^)(RegionsVpnRegionsResponse * _Nullable, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchVpnRegions(locale:callback:)")));
+- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("pingRequests(callback:)")));
+@property (readonly) id<RegionsKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
+@end
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("Regions.Companion")))
+@interface RegionsRegionsCompanion : RegionsBase
++ (instancetype)alloc __attribute__((unavailable));
++ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
++ (instancetype)companion __attribute__((swift_name("init()")));
+@property (class, readonly, getter=shared) RegionsRegionsCompanion *shared __attribute__((swift_name("shared")));
+@end
+
 
 /**
  * @note annotations
@@ -419,31 +444,6 @@ __attribute__((swift_name("VpnRegionsResponse.RegionServerDetailsCompanion")))
 - (id<RegionsKotlinx_serialization_coreKSerializer>)serializer __attribute__((swift_name("serializer()")));
 @end
 
-__attribute__((swift_name("Kotlinx_coroutines_coreCoroutineScope")))
-@protocol RegionsKotlinx_coroutines_coreCoroutineScope
-@required
-@property (readonly) id<RegionsKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Regions")))
-@interface RegionsRegions : RegionsBase <RegionsRegionsAPI, RegionsKotlinx_coroutines_coreCoroutineScope>
-@property (class, readonly, getter=companion) RegionsRegionsCompanion *companion __attribute__((swift_name("companion")));
-- (void)fetchShadowsocksRegionsLocale:(NSString *)locale callback:(void (^)(NSArray<RegionsShadowsocksRegionsResponse *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchShadowsocksRegions(locale:callback:)")));
-- (void)fetchVpnRegionsLocale:(NSString *)locale callback:(void (^)(RegionsVpnRegionsResponse * _Nullable, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("fetchVpnRegions(locale:callback:)")));
-- (void)pingRequestsCallback:(void (^)(NSArray<RegionsRegionLowerLatencyInformation *> *, RegionsKotlinError * _Nullable))callback __attribute__((swift_name("pingRequests(callback:)")));
-@property (readonly) id<RegionsKotlinCoroutineContext> coroutineContext __attribute__((swift_name("coroutineContext")));
-@end
-
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Regions.Companion")))
-@interface RegionsRegionsCompanion : RegionsBase
-+ (instancetype)alloc __attribute__((unavailable));
-+ (instancetype)allocWithZone:(struct _NSZone *)zone __attribute__((unavailable));
-+ (instancetype)companion __attribute__((swift_name("init()")));
-@property (class, readonly, getter=shared) RegionsRegionsCompanion *shared __attribute__((swift_name("shared")));
-@end
-
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("RegionsAPIKt")))
 @interface RegionsRegionsAPIKt : RegionsBase
@@ -452,10 +452,10 @@ __attribute__((swift_name("RegionsAPIKt")))
 
 __attribute__((swift_name("KotlinThrowable")))
 @interface RegionsKotlinThrowable : RegionsBase
-- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithCause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithCause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)initWithMessage:(NSString * _Nullable)message cause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 
 /**
@@ -475,8 +475,8 @@ __attribute__((swift_name("KotlinError")))
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
 + (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
 - (instancetype)initWithMessage:(NSString * _Nullable)message __attribute__((swift_name("init(message:)"))) __attribute__((objc_designated_initializer));
-- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 - (instancetype)initWithCause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(cause:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)initWithMessage:(NSString * _Nullable)message cause:(RegionsKotlinThrowable * _Nullable)cause __attribute__((swift_name("init(message:cause:)"))) __attribute__((objc_designated_initializer));
 @end
 
 __attribute__((objc_subclassing_restricted))
@@ -500,6 +500,20 @@ __attribute__((swift_name("KotlinArray")))
 @property (readonly) int32_t size __attribute__((swift_name("size")));
 @end
 
+
+/**
+ * @note annotations
+ *   kotlin.SinceKotlin(version="1.3")
+*/
+__attribute__((swift_name("KotlinCoroutineContext")))
+@protocol RegionsKotlinCoroutineContext
+@required
+- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<RegionsKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
+- (id<RegionsKotlinCoroutineContextElement> _Nullable)getKey:(id<RegionsKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
+- (id<RegionsKotlinCoroutineContext>)minusKeyKey:(id<RegionsKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
+- (id<RegionsKotlinCoroutineContext>)plusContext:(id<RegionsKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
+@end
+
 __attribute__((swift_name("Kotlinx_serialization_coreSerializationStrategy")))
 @protocol RegionsKotlinx_serialization_coreSerializationStrategy
 @required
@@ -519,25 +533,22 @@ __attribute__((swift_name("Kotlinx_serialization_coreKSerializer")))
 @required
 @end
 
-
-/**
- * @note annotations
- *   kotlin.SinceKotlin(version="1.3")
-*/
-__attribute__((swift_name("KotlinCoroutineContext")))
-@protocol RegionsKotlinCoroutineContext
-@required
-- (id _Nullable)foldInitial:(id _Nullable)initial operation:(id _Nullable (^)(id _Nullable, id<RegionsKotlinCoroutineContextElement>))operation __attribute__((swift_name("fold(initial:operation:)")));
-- (id<RegionsKotlinCoroutineContextElement> _Nullable)getKey:(id<RegionsKotlinCoroutineContextKey>)key __attribute__((swift_name("get(key:)")));
-- (id<RegionsKotlinCoroutineContext>)minusKeyKey:(id<RegionsKotlinCoroutineContextKey>)key __attribute__((swift_name("minusKey(key:)")));
-- (id<RegionsKotlinCoroutineContext>)plusContext:(id<RegionsKotlinCoroutineContext>)context __attribute__((swift_name("plus(context:)")));
-@end
-
 __attribute__((swift_name("KotlinIterator")))
 @protocol RegionsKotlinIterator
 @required
 - (BOOL)hasNext __attribute__((swift_name("hasNext()")));
 - (id _Nullable)next __attribute__((swift_name("next()")));
+@end
+
+__attribute__((swift_name("KotlinCoroutineContextElement")))
+@protocol RegionsKotlinCoroutineContextElement <RegionsKotlinCoroutineContext>
+@required
+@property (readonly) id<RegionsKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
+@end
+
+__attribute__((swift_name("KotlinCoroutineContextKey")))
+@protocol RegionsKotlinCoroutineContextKey
+@required
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreEncoder")))
@@ -679,17 +690,6 @@ __attribute__((swift_name("Kotlinx_serialization_coreDecoder")))
 - (int16_t)decodeShort __attribute__((swift_name("decodeShort()")));
 - (NSString *)decodeString __attribute__((swift_name("decodeString()")));
 @property (readonly) RegionsKotlinx_serialization_coreSerializersModule *serializersModule __attribute__((swift_name("serializersModule")));
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextElement")))
-@protocol RegionsKotlinCoroutineContextElement <RegionsKotlinCoroutineContext>
-@required
-@property (readonly) id<RegionsKotlinCoroutineContextKey> key __attribute__((swift_name("key")));
-@end
-
-__attribute__((swift_name("KotlinCoroutineContextKey")))
-@protocol RegionsKotlinCoroutineContextKey
-@required
 @end
 
 __attribute__((swift_name("Kotlinx_serialization_coreCompositeEncoder")))
